@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@integration
+@Integration
 Scenario: Add one Expense
 	Given a webapi
 	When I GET all Expenses
@@ -19,7 +19,7 @@ Scenario: Add one Expense
 	| Date       | Recipient | Amount | Currency | Type |
 	| 2022-10-01 | Kebab     | 100    | CHF      | Food |
 
-@integration
+@Integration
 Scenario: update one Expense
 	Given a webapi
 	When I POST an expense
@@ -41,7 +41,7 @@ Scenario: update one Expense
 	| Date       | Recipient | Amount | Currency | Type  |
 	| 2022-10-01 | Fuel      | 200    | USD      | Other |
 
-@integration
+@Integration
 Scenario: delete one Expense
 	Given a webapi
 	When I POST an expense
