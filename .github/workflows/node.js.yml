@@ -9,11 +9,13 @@ on:
   pull_request:
     branches: [ "master" ]
 
+defaults:
+    run:
+      working-directory: reactapp
+
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: reactapp
+  
     runs-on: ubuntu-latest
 
     strategy:
