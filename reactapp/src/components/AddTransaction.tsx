@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Transaction } from '../types/Transaction';
 import { addTransaction } from '../api/api';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';

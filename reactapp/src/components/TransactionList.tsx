@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Transaction as TransactionType } from '../types/Transaction';
 import EditableTransaction from './EditableTransaction';
 import Table from '@mui/material/Table';
@@ -50,7 +50,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
                 <TableCell>Recipient</TableCell>
                 <TableCell>Currency</TableCell>
                 <TableCell>Type</TableCell>
-                <TableCell>Edit</TableCell> {/* Add TableCell for Edit */}
+                <TableCell>Edit</TableCell> {}
             </TableRow>
         </TableHead>
         <TableBody>
