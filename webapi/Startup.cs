@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using webapi.Middleware;
 using webapi.Repositories;
 using webapi.Services;
 
@@ -32,6 +33,7 @@ public class Startup
             app.UseSwaggerUI();
         }
 
+        app.UseMiddleware<RequestLoggingMiddleware>();
         app.UseHttpsRedirection();
         app.UseRouting();
         app.UseEndpoints(endpoints =>
