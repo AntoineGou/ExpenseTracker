@@ -1,6 +1,12 @@
 import { Transaction as TransactionType } from '../types/Transaction';
 import { toast } from 'react-toastify';
 
+const handleApiError = (error: unknown, message: string, responseStatusText?: string): void => {
+    toast(message);
+    console.error(`${message}:`, error);
+    throw new Error(responseStatusText || 'An error occurred');
+};
+
 export async function updateTransaction(
     id: number,
     transaction: TransactionType
@@ -14,8 +20,7 @@ export async function updateTransaction(
     });
 
     if (!response.ok) {
-        toast('Error updating transaction');
-        throw new Error(`Error updating transaction: ${response.statusText}`);
+        handleApiError(new Error('Error updating transaction'), 'Error updating transaction', response.statusText);
     }
 
     const updatedTransaction: TransactionType = await response.json();
@@ -28,9 +33,8 @@ export const fetchTransactions = async (): Promise<TransactionType[]> => {
         const data = await response.json();
         return data;
     } catch (error) {
-        toast('Error fetching transactions');
-        console.error('Error fetching transactions:', error);
-        throw error;
+        handleApiError(error, 'Error fetching transactions');
+        return Promise.reject(error);
     }
 };
 
@@ -44,9 +48,7 @@ export const addTransaction = async (transaction: TransactionType): Promise<void
     });
 
     if (!response.ok) {
-        toast('Error adding transactions');
-        console.error('Error fetching transactions:');
-        throw new Error('Error adding transaction');
+        handleApiError(new Error('Error adding transaction'), 'Error adding transaction', response.statusText);
     }
 };
 
@@ -56,9 +58,6 @@ export const deleteTransaction = async (id: number): Promise<void> => {
     });
 
     if (!response.ok) {
-        toast('Error deleting transactions');
-        console.error('Error fetching transactions:');
-        throw new Error(`Error deleting transaction: ${response.statusText}`);
+        handleApiError(new Error('Error deleting transaction'), 'Error deleting transaction', response.statusText);
     }
 };
-
