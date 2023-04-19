@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using webapi.Middleware;
+﻿using webapi.Middleware;
 using webapi.Repositories;
 using webapi.Services;
 

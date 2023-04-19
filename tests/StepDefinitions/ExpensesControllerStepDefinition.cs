@@ -25,7 +25,7 @@ public class ExpenseControllerStepDefinitions
     [When(@"I GET all Expenses")]
     public async Task WhenIgetAllExpenses()
     {
-        _context.LastResult = await _context.Api.CreateClient().GetAsync($"api/Expenses/");
+        _context.LastResult = await _context.Api.CreateClient().GetAsync("api/Expenses/");
     }
 
     [When(@"I POST an expense")]
@@ -65,7 +65,7 @@ public class ExpenseControllerStepDefinitions
 
 public static class TestHelper
 {
-    private static readonly JsonSerializerOptions SerializerOptions = new JsonSerializerOptions
+    private static readonly JsonSerializerOptions SerializerOptions = new ()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         Converters = { new JsonStringEnumConverter() }
