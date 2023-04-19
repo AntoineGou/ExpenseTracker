@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore '.\webapi\'
+      run: dotnet restore '.\webapi\' '.\tests\'
     - name: Build
-      run: dotnet build '.\webapi\' --no-restore
+      run: dotnet build '.\webapi\' '.\tests\' --no-restore
     - name: Test
-      run: dotnet test '.\webapi\' --no-build --verbosity normal
+      run: dotnet test '.\webapi\' '.\tests\' --no-build --verbosity normal
