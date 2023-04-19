@@ -1,5 +1,5 @@
 import { Transaction as TransactionType } from '../types/Transaction';
-
+import { toast } from 'react-toastify';
 
 export async function updateTransaction(
     id: number,
@@ -14,6 +14,7 @@ export async function updateTransaction(
     });
 
     if (!response.ok) {
+        toast('Error updating transaction');
         throw new Error(`Error updating transaction: ${response.statusText}`);
     }
 
@@ -27,6 +28,7 @@ export const fetchTransactions = async (): Promise<TransactionType[]> => {
         const data = await response.json();
         return data;
     } catch (error) {
+        toast('Error fetching transactions');
         console.error('Error fetching transactions:', error);
         throw error;
     }
@@ -42,6 +44,8 @@ export const addTransaction = async (transaction: TransactionType): Promise<void
     });
 
     if (!response.ok) {
+        toast('Error adding transactions');
+        console.error('Error fetching transactions:');
         throw new Error('Error adding transaction');
     }
 };
@@ -52,6 +56,8 @@ export const deleteTransaction = async (id: number): Promise<void> => {
     });
 
     if (!response.ok) {
+        toast('Error deleting transactions');
+        console.error('Error fetching transactions:');
         throw new Error(`Error deleting transaction: ${response.statusText}`);
     }
 };

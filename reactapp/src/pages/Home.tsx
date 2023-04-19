@@ -4,6 +4,8 @@ import TransactionList from '../components/TransactionList';
 import { Transaction as TransactionType } from '../types/Transaction';
 import Typography from '@mui/material/Typography';
 import { fetchTransactions } from '../api/api';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home: React.FC = () => {
     const [transactions, setTransactions] = useState<TransactionType[]>([]);
@@ -27,6 +29,18 @@ const Home: React.FC = () => {
 
     return (
         <div>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
             <Typography variant="h4" component="h1" gutterBottom>
                 Expense Tracker
             </Typography>
