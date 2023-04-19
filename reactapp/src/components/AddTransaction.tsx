@@ -12,7 +12,6 @@ interface AddTransactionProps {
     refreshTransactions: () => void;
 }
 
-
 const AddTransaction: React.FC<AddTransactionProps> = ({ refreshTransactions }) => {
     const [date, setDate] = useState('');
     const [amount, setAmount] = useState(0);
@@ -28,17 +27,17 @@ const AddTransaction: React.FC<AddTransactionProps> = ({ refreshTransactions }) 
             amount,
             recipient,
             currency,
-            type,
+            type
         };
 
         try {
-            await addTransaction(newTransaction); // Replace submitTransaction with addTransaction
+            await addTransaction(newTransaction);
             setDate('');
             setAmount(0);
             setRecipient('');
             setCurrency('');
             setType('');
-            refreshTransactions(); // Refresh the transactions after adding a new one
+            refreshTransactions();
         } catch (error) {
             console.error('Error adding transaction:', error);
         }
@@ -57,18 +56,18 @@ const AddTransaction: React.FC<AddTransactionProps> = ({ refreshTransactions }) 
                 sx={{ mr: 2 }}
             />
             <TextField
-                label="Amount"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(+e.target.value)}
-                required
-                sx={{ mr: 2 }}
-            />
-            <TextField
                 label="Recipient"
                 type="text"
                 value={recipient}
                 onChange={(e) => setRecipient(e.target.value)}
+                required
+                sx={{ mr: 2 }}
+            />
+            <TextField
+                label="Amount"
+                type="number"
+                value={amount}
+                onChange={(e) => setAmount(+e.target.value)}
                 required
                 sx={{ mr: 2 }}
             />
