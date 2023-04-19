@@ -50,7 +50,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
                 <TableCell>Recipient</TableCell>
                 <TableCell>Currency</TableCell>
                 <TableCell>Type</TableCell>
-                <TableCell>Edit</TableCell> {}
+                <TableCell>Edit</TableCell>
             </TableRow>
         </TableHead>
         <TableBody>
