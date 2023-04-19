@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name : restore tools
-	dotnet tool restore && dotnet cake --target=SetupDev
+      run: dotnet tool restore && dotnet cake --target=SetupDev
     - name: Restore dependencies
       run: dotnet restore 
     - name: Build
