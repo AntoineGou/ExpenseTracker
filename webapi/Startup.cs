@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using webapi.Repositories;
+﻿using webapi.Repositories;
+using webapi.Services;
+
+namespace webapi;
 
 public class Startup
 {

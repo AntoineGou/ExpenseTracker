@@ -1,5 +1,7 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace webapi.Models;
 
 public class ExpenseDto
 {
@@ -11,6 +13,13 @@ public class ExpenseDto
     [JsonConverter(typeof(ExpenseTypeJsonConverter))]
     public ExpenseType Type { get; set; }
 
+}
+
+public enum ExpenseType
+{
+    Other,
+    Food,
+    Drinks
 }
 
 public class ExpenseTypeJsonConverter : JsonConverter<ExpenseType>

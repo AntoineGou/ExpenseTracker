@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using TechTalk.SpecFlow.Assist;
+using webapi.Models;
 
 namespace tests.StepDefinitions;
 

@@ -1,4 +1,7 @@
-﻿using webapi.Repositories;
+﻿using webapi.Models;
+using webapi.Repositories;
+
+namespace webapi.Services;
 
 public class ExpenseService
 {
