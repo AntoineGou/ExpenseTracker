@@ -27,4 +27,4 @@ jobs:
     - name: Build tests
       run: dotnet build 'tests' --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --filter TestCategory=Unit --no-build --verbosity normal

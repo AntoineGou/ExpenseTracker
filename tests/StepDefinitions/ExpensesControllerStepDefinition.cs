@@ -19,7 +19,7 @@ public class ExpenseControllerStepDefinitions
     [Given(@"a webapi")]
     public void GivenAWebapi()
     {
-        _context.ClearDb();
+        await _context.ClearDb();
     }
 
     [When(@"I GET all Expenses")]
