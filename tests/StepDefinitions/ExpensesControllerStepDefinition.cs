@@ -17,7 +17,7 @@ public class ExpenseControllerStepDefinitions
         _context = context;
     }
     [Given(@"a webapi")]
-    public void GivenAWebapi()
+    public async Task GivenAWebapi()
     {
         await _context.ClearDb();
     }
