@@ -18,7 +18,7 @@ Task("SetupDev")
     }, "database");
 
     Information("Sleeping.");
-    System.Threading.Thread.Sleep(1000);
+    System.Threading.Thread.Sleep(15000);
     Information("Awakening.");
 
     ApplyDatabaseMigration();
