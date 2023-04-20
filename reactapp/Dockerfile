@@ -20,7 +20,7 @@ FROM nginx:stable
 COPY --from=build /src/build /usr/share/nginx/html
 
 # Copy the Nginx configuration file (if you have a custom configuration)
-# COPY reactapp/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the port that the app is running on (default is 80 for Nginx)
 EXPOSE 80
